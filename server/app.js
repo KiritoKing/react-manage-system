@@ -19,7 +19,7 @@ const preProcessLogin = async (ctx, next) => {
   const user = ctx.cookies.get("user", { signed: true });
   if (user !== undefined && user !== null) {
     ctx.state.login = true;
-    console.log("direct login from cookie");
+    console.log("Login using cookie!");
   }
   const { id, pwd } = ctx.request.body;
   if (id !== undefined && pwd !== undefined) {

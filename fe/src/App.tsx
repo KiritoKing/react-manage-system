@@ -1,47 +1,28 @@
 import React from "react";
-import axios from "axios";
+import { createHashRouter, RouterProvider } from "react-router-dom";
+import { Provider } from "react-redux";
+import Login from "./Pages/Login";
+import { store } from "./Redux/store";
+import Home from "./Pages/Home";
+
+const router = createHashRouter([
+  {
+    path: "/",
+    element: <Login />,
+  },
+  {
+    path: "/home",
+    element: <Home />,
+  },
+]);
 
 const App = () => {
-  const login = () => {
-    axios
-      .post("/api/login", {
-        id: "admin",
-        pwd: "123456",
-      })
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-  const logout = () => {
-    axios
-      .post("/api/logout")
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-  const test = () => {
-    fetch("/api")
-      .then(async (res) => await res.text())
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  };
-
   return (
-    <div>
-      <button onClick={login}>登录</button>
-      <button onClick={logout}>登出</button>
-      <button onClick={test}>测试代理</button>
-    </div>
+    <React.StrictMode>
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </React.StrictMode>
   );
 };
 

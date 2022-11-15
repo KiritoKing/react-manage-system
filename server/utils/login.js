@@ -14,7 +14,7 @@ async function login(ctx) {
     ctx.body = {
       code: 403,
       status: false,
-      message: "Forbidden request",
+      message: "Forbidden",
     };
   }
 }

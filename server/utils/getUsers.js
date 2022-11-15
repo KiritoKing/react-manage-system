@@ -6,7 +6,6 @@ const dataPath = path.join(process.cwd(), "server/data/users.json");
 async function getUsers() {
   try {
     const res = fs.readFileSync(dataPath);
-    const obj = JSON.parse(res.toString());
     // console.log("Successfully read from data/users.json");
     // console.log(obj);
     return JSON.parse(res.toString());

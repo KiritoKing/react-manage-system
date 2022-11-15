@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Avatar, Button, message, PageHeader } from "antd";
 import styles from "./style.module.css";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
@@ -8,6 +8,7 @@ import { MenuOutlined } from "@ant-design/icons";
 import axios from "axios";
 import Forbid from "../../Pages/Forbid";
 import useLogin from "Hooks/useLogin";
+import DrawerMenu from "./DrawerMenu";
 
 const Layout = () => {
   const isLogin = useLogin();
@@ -15,6 +16,7 @@ const Layout = () => {
   const nav = useNavigate();
   const loc = useLocation();
   const user = useAppSelector(selectUser);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const logoutHandler = () => {
     if (localStorage.getItem("user") === null) return;
@@ -37,7 +39,11 @@ const Layout = () => {
       <PageHeader
         backIcon={loc.pathname === "/home" ? <MenuOutlined /> : undefined}
         onBack={() => {
-          nav(-1);
+          if (loc.pathname === "/home") {
+            setDrawerOpen(true);
+          } else {
+            nav(-1);
+          }
         }}
         className={styles.header}
         title="人员管理系统"
@@ -55,6 +61,12 @@ const Layout = () => {
             登出
           </Button>,
         ]}
+      />
+      <DrawerMenu
+        open={drawerOpen}
+        setOpen={(val) => {
+          setDrawerOpen(val);
+        }}
       />
       {isLogin ? <Outlet /> : <Forbid />}
     </>

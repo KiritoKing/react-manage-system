@@ -17,11 +17,13 @@ export interface DataType {
 
 export interface ListState {
   value: DataType[];
+  view: DataType[];
   ready: boolean;
 }
 
 const initialState: ListState = {
   value: [],
+  view: [],
   ready: false,
 };
 
@@ -31,10 +33,12 @@ export const listSlice = createSlice({
   reducers: {
     setList: (state, action: PayloadAction<DataType[]>) => {
       state.value = action.payload;
+      state.view = state.value;
       state.ready = true;
     },
     addItem: (state, action: PayloadAction<DataType>) => {
       state.value.push(action.payload);
+      state.view = state.value;
       axios
         .post("/api/stu/add", action.payload)
         .then((res) => {
@@ -48,7 +52,7 @@ export const listSlice = createSlice({
     delItem: (state, action: PayloadAction<number>) => {
       const id = state.value[action.payload].key;
       state.value.splice(action.payload, 1);
-
+      state.view = state.value;
       axios
         .post("/api/stu/del", { id })
         .then((res) => {
@@ -68,6 +72,7 @@ export const listSlice = createSlice({
 
       if (target !== undefined) {
         state.value.splice(state.value.indexOf(target), 1, action.payload);
+        state.view = state.value;
         axios
           .post("/api/stu/modify", { id: key, data: action.payload })
           .then((res) => {
@@ -82,11 +87,25 @@ export const listSlice = createSlice({
           });
       }
     },
+    setListView: (state, action: PayloadAction<DataType[]>) => {
+      state.view = action.payload;
+    },
+    resetListView: (state) => {
+      state.view = state.value;
+    },
   },
 });
 
-export const { setList, addItem, delItem, modifyItem } = listSlice.actions;
+export const {
+  setList,
+  addItem,
+  delItem,
+  modifyItem,
+  setListView,
+  resetListView,
+} = listSlice.actions;
 export const selectList = (state: RootState) => state.list.value;
 export const selectListReady = (state: RootState) => state.list.ready;
+export const selectListView = (state: RootState) => state.list.view;
 
 export default listSlice.reducer;

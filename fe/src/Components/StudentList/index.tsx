@@ -2,11 +2,11 @@ import { Table, Avatar, Tag } from "antd";
 import axios from "axios";
 import React, { useEffect } from "react";
 import {
-  selectList,
   selectListReady,
   setList,
   DataType,
   delItem,
+  selectListView,
 } from "Redux/listSlice";
 import styles from "./style.module.css";
 import { useAppDispatch, useAppSelector } from "Redux/store";
@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 
 const StudentList: React.FC = () => {
   const dispatch = useAppDispatch();
-  const list = useAppSelector(selectList);
+  const listView = useAppSelector(selectListView);
   const listReady = useAppSelector(selectListReady);
 
   const columns: ColumnsType<DataType> = [
@@ -104,7 +104,7 @@ const StudentList: React.FC = () => {
     <div className={styles.container}>
       <Table
         columns={columns}
-        dataSource={list}
+        dataSource={listView}
         bordered
         loading={!listReady}
         pagination={{

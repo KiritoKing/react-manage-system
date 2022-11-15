@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { Image, List, Tag } from "antd";
 import BreadBar from "Components/ControlPanel/BreadBar";
 import useStack from "Hooks/useStack";
 import Error from "Pages/Error";
-import React, { useMemo } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { selectList } from "Redux/listSlice";
 import { useAppSelector } from "Redux/store";

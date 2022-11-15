@@ -16,25 +16,20 @@ const LoginPanel = () => {
       alert("请输入用户名和密码！");
       return;
     }
-    console.log(`userName: ${userName}`);
-    console.log(`pwd: ${pwd}`);
+    // console.log(`userName: ${userName}`);
+    // console.log(`pwd: ${pwd}`);
     axios
-      .post(
-        "/api/login",
-        {
-          id: userName,
-          pwd,
-        },
-        { withCredentials: true }
-      )
+      .post("/api/login", {
+        id: userName,
+        pwd,
+      })
       .then((res) => {
         const { status, user } = res.data;
         if (status === true && user !== undefined) {
           dispatch(setLogin(user));
           localStorage.setItem("user", user);
-          alert("登录成功");
         } else {
-          alert("用户名或密码不正确！");
+          alert("用户名或密码不正确");
         }
       })
       .catch((err) => {

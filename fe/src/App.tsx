@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import Login from "./Pages/Login";
 import { store } from "./Redux/store";
 import Home from "./Pages/Home";
+import Layout from "./Components/Layout";
 
 const router = createHashRouter([
   {
@@ -12,7 +13,13 @@ const router = createHashRouter([
   },
   {
     path: "/home",
-    element: <Home />,
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+    ],
   },
 ]);
 

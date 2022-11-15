@@ -2,6 +2,7 @@
   "include": ["fe/src"],
   "exclude": ["node_modules"],
   "compilerOptions": {
+    "baseUrl": "fe/src",
     "target": "ES5",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     "jsx": "react",                                /* Specify what JSX code is generated. */
     "module": "ES6",                                /* Specify what module code is generated. */

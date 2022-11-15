@@ -4,6 +4,6 @@ import App from "./App";
 import "./index.css";
 import "antd/dist/antd.css";
 
-document.title = "人事资源管理系统";
+document.title = "人员管理系统";
 const root = document.getElementById("root");
 ReactDOM.render(<App />, root);

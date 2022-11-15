@@ -2,7 +2,8 @@ import { Input, Modal, Select } from "antd";
 import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import { faker } from "@faker-js/faker";
-import { DataType } from "Redux/listSlice";
+import { DataType, selectList } from "Redux/listSlice";
+import { useAppSelector } from "Redux/store";
 
 interface IProp {
   open: boolean;
@@ -11,6 +12,7 @@ interface IProp {
 }
 
 const AddModal: React.FC<IProp> = ({ open, setOpen, add }) => {
+  const listLen = useAppSelector(selectList).length;
   const [avatar, setAvatar] = useState("");
   const [id, setId] = useState("");
   const [name, setName] = useState("");
@@ -32,6 +34,7 @@ const AddModal: React.FC<IProp> = ({ open, setOpen, add }) => {
     setOpen(false);
     const item: DataType = {
       avatar,
+      key: listLen,
       id,
       name,
       faculty,
@@ -40,6 +43,7 @@ const AddModal: React.FC<IProp> = ({ open, setOpen, add }) => {
       tel,
       mail,
     };
+    console.log(item);
     add(item);
   };
 

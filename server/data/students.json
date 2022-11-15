@@ -1,69 +1,24 @@
 [
   {
-    "id": "U202015516",
-    "name": "陈梁子豪",
-    "faculty": "计算机科学与技术",
-    "grade": "2020级",
-    "gender": "男",
-    "tel": "18011226636",
-    "mail": "462241980@qq.com"
-  },
-  {
-    "id": "U202015517",
-    "name": "赵一霏",
-    "faculty": "生命科学",
-    "grade": "2021级",
-    "gender": "女",
-    "tel": "18011226636",
-    "mail": "462241980@qq.com"
-  },
-  {
-    "id": "U202015518",
-    "name": "董晓雪",
-    "faculty": "经济学院",
-    "grade": "2019级",
-    "gender": "女",
-    "tel": "18011226636",
-    "mail": "462241980@qq.com"
-  },
-  {
-    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1205.jpg",
-    "id": "620226e7-16ec-4ed6-8c62-d28e516df482",
-    "name": "Tierra6",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/482.jpg",
+    "key": 0,
+    "id": "40776ddc-9c99-4c74-a690-1ef48426d7cd",
+    "name": "Tamia.Greenholt",
     "faculty": "计算机科学与技术",
     "grade": "2020",
     "gender": "男",
-    "tel": "11862525787",
-    "mail": "Frieda15@gmail.com"
+    "tel": "19528820115",
+    "mail": "Marjolaine86@gmail.com"
   },
   {
-    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1095.jpg",
-    "id": "da5cc0d3-9727-4941-8c74-8091be205bd9",
-    "name": "Jean88",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1149.jpg",
+    "key": 1,
+    "id": "8f229f3d-4610-4962-8ea1-840b759d15de",
+    "name": "Aiden56",
     "faculty": "计算机科学与技术",
     "grade": "2020",
     "gender": "男",
-    "tel": "17801393536",
-    "mail": "Mathias_Romaguera96@hotmail.com"
-  },
-  {
-    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1064.jpg",
-    "id": "9d8fb3e3-ecd2-418d-983d-c5c710390001",
-    "name": "Rebecca_VonRueden79",
-    "faculty": "计算机科学与技术",
-    "grade": "2020",
-    "gender": "男",
-    "tel": "11042052394",
-    "mail": "Herman.Johnston@yahoo.com"
-  },
-  {
-    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/157.jpg",
-    "id": "84b7a0bb-78bb-405f-8a78-7838aecfd72e",
-    "name": "Nicholas_Kertzmann",
-    "faculty": "计算机科学与技术",
-    "grade": "2020",
-    "gender": "女",
-    "tel": "13449532408",
-    "mail": "Merlin99@hotmail.com"
+    "tel": "19669375955",
+    "mail": "Dusty.Jenkins@gmail.com"
   }
 ]

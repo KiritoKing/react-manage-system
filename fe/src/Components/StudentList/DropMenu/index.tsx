@@ -2,16 +2,25 @@ import { DeleteOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Dropdown } from "antd";
 import React, { useState } from "react";
+import { DataType } from "Redux/listSlice";
 import ConfirmModal from "../ConfirmModal";
 
-const DropMenu: React.FC = () => {
+interface IProp {
+  onEdit: () => void;
+  onDel: () => void;
+  data: DataType;
+}
+
+const DropMenu: React.FC<IProp> = ({ onEdit, onDel }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const editHandler = () => {
     console.log("edit");
+    onEdit();
   };
   const deleteItem = () => {
     console.log("del");
+    onDel();
   };
   const delHandler = () => {
     setModalOpen(true);

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addItem, DataType } from "Redux/listSlice";
 import AddButton from "./AddButton";
-import DetailModal from "./DetailModal";
+import DetailModal from "../DetailModal";
 import BreadBar from "./BreadBar";
 import SearchBar from "./SearchBar";
 import styles from "./style.module.css";

@@ -39,7 +39,7 @@ export const listSlice = createSlice({
         .post("/api/stu/add", action.payload)
         .then((res) => {
           const response = res.data;
-          console.log(response);
+          console.log(response.message);
         })
         .catch((err) => {
           console.error(err);
@@ -52,7 +52,7 @@ export const listSlice = createSlice({
       axios
         .post("/api/stu/del", { id })
         .then((res) => {
-          console.log(res.data);
+          console.log(res.data.message);
           if (res.data.code !== 200) {
             alert("操作失败");
             location.reload();
@@ -71,7 +71,7 @@ export const listSlice = createSlice({
         axios
           .post("/api/stu/modify", { id: key, data: action.payload })
           .then((res) => {
-            console.log(res.data);
+            console.log(res.data.message);
             if (res.data.code !== 200) {
               alert("操作失败");
               location.reload();

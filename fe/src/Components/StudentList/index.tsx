@@ -13,6 +13,7 @@ import { useAppDispatch, useAppSelector } from "Redux/store";
 import type { ColumnsType } from "antd/es/table";
 
 import DropMenu from "./DropMenu";
+import { Link } from "react-router-dom";
 
 const StudentList: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -34,7 +35,9 @@ const StudentList: React.FC = () => {
       title: "姓名",
       dataIndex: "name",
       key: "name",
-      render: (text) => <a>{text}</a>,
+      render: (text, record) => (
+        <Link to={`/home/student/${record.key}`}>{text}</Link>
+      ),
     },
     {
       title: "专业",

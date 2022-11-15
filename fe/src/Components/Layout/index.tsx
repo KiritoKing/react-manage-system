@@ -1,9 +1,10 @@
 import React from "react";
-import { Button, PageHeader } from "antd";
+import { Avatar, Button, message, PageHeader } from "antd";
 import styles from "./style.module.css";
-import { Outlet, useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../Redux/store";
-import { setLogout } from "../../Redux/loginSlice";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../Redux/store";
+import { selectUser, setLogout } from "../../Redux/loginSlice";
+import { MenuOutlined } from "@ant-design/icons";
 import axios from "axios";
 import Forbid from "../../Pages/Forbid";
 import useLogin from "Hooks/useLogin";
@@ -12,6 +13,8 @@ const Layout = () => {
   const isLogin = useLogin();
   const dispatch = useAppDispatch();
   const nav = useNavigate();
+  const loc = useLocation();
+  const user = useAppSelector(selectUser);
 
   const logoutHandler = () => {
     if (localStorage.getItem("user") === null) return;
@@ -21,6 +24,7 @@ const Layout = () => {
         console.log(res.data);
         dispatch(setLogout());
         localStorage.removeItem("user");
+        void message.success("登出成功");
         nav("/");
       })
       .catch((err) => {
@@ -31,14 +35,26 @@ const Layout = () => {
   return (
     <>
       <PageHeader
-        onBack={() => null}
+        backIcon={loc.pathname === "/home" ? <MenuOutlined /> : undefined}
+        onBack={() => {
+          nav(-1);
+        }}
         className={styles.header}
         title="人员管理系统"
-        extra={
-          <Button type="primary" onClick={logoutHandler} hidden={!isLogin}>
+        extra={[
+          <span key="1" className={styles.user}>
+            <Avatar src="https://joeschmoe.io/api/v1/random" />
+            {user}
+          </span>,
+          <Button
+            key="2"
+            type="primary"
+            onClick={logoutHandler}
+            hidden={!isLogin}
+          >
             登出
-          </Button>
-        }
+          </Button>,
+        ]}
       />
       {isLogin ? <Outlet /> : <Forbid />}
     </>

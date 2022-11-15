@@ -17,4 +17,5 @@
 }
 
 .bread {
+  box-sizing: border-box;
 }

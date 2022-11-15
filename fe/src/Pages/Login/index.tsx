@@ -13,6 +13,7 @@ const Login = () => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.text}>背景图来自网络随机图片源，与本人无关</div>
       <LoginPanel />
     </div>
   );

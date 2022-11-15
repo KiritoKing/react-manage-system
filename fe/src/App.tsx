@@ -5,6 +5,7 @@ import Login from "./Pages/Login";
 import { store } from "./Redux/store";
 import Home from "./Pages/Home";
 import Layout from "./Components/Layout";
+import Detail from "Pages/Detail";
 
 const router = createHashRouter([
   {
@@ -18,6 +19,10 @@ const router = createHashRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "student/:key",
+        element: <Detail />,
       },
     ],
   },

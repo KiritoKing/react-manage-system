@@ -1,7 +1,7 @@
 import { DeleteOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Dropdown } from "antd";
-import DetailModal from "Components/ControlPanel/DetailModal";
+import DetailModal from "Components/DetailModal";
 import React, { useState } from "react";
 import { DataType, modifyItem } from "Redux/listSlice";
 import { useAppDispatch } from "Redux/store";

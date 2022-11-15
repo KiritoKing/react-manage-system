@@ -1,0 +1,25 @@
+.container {
+  margin-right: 10vw;
+  background-color: white;
+  width: 30vw;
+  min-width: 30rem;
+  height: 50vh;
+  min-height: 30rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 7rem;
+}
+
+.text {
+  color: rgb(59, 59, 59);
+  width: 65%;
+  padding: 0;
+}
+
+.controls {
+  margin-top: 2.5rem;
+  width: 70%;
+}

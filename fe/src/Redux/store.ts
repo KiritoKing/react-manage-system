@@ -1,6 +1,6 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import loginReducer from "./LoginSlice";
+import loginReducer from "./loginSlice";
 
 export const store = configureStore({
   reducer: {

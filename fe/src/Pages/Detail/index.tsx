@@ -1,7 +1,8 @@
 import { Image, List, Tag } from "antd";
 import BreadBar from "Components/ControlPanel/BreadBar";
 import useStack from "Hooks/useStack";
-import React from "react";
+import Error from "Pages/Error";
+import React, { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { selectList } from "Redux/listSlice";
 import { useAppSelector } from "Redux/store";
@@ -10,10 +11,14 @@ import styles from "./style.module.css";
 const Detail = () => {
   const { key } = useParams();
   const list = useAppSelector(selectList);
-  const data = list.find((item) => item.key === key);
+  const res = list.find((item) => item.key === key);
+  const str = localStorage.getItem("temp");
+  const data =
+    res === undefined ? (str === null ? undefined : JSON.parse(str)) : res;
   if (data === undefined) {
-    return <>Fail</>;
+    return <Error />;
   }
+  localStorage.setItem("temp", JSON.stringify(data));
   useStack();
   return (
     <div className={styles.container}>

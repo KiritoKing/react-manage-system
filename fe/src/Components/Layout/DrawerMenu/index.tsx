@@ -2,8 +2,8 @@ import { Drawer, Menu } from "antd";
 import type { MenuProps } from "antd";
 import { HomeOutlined, InfoCircleOutlined } from "@ant-design/icons";
 
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface IProp {
   open: boolean;
@@ -12,7 +12,17 @@ interface IProp {
 
 const DrawerMenu: React.FC<IProp> = ({ open, setOpen }) => {
   const nav = useNavigate();
+  const loc = useLocation();
   const [current, setCurrent] = useState("home");
+
+  useEffect(() => {
+    const paths = loc.pathname.split("/");
+    if (paths.length <= 2) {
+      setCurrent("home");
+    } else {
+      setCurrent("about");
+    }
+  }, [loc]);
 
   const onClose = () => {
     setOpen(false);
@@ -21,6 +31,7 @@ const DrawerMenu: React.FC<IProp> = ({ open, setOpen }) => {
   const onClick: MenuProps["onClick"] = (e) => {
     console.log("click ", e);
     setCurrent(e.key);
+    setOpen(false);
   };
 
   const items: MenuProps["items"] = [

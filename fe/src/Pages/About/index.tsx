@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./style.module.css";
 
-const Error = () => {
+const About = () => {
   return (
     <div className={styles.container}>
-      <p className={styles.text}>你找的页面不见了，返回一下吧~</p>
+      <p className={styles.text}>Powered By: ChlorineC 陈梁子豪@HUST, 2022</p>
     </div>
   );
 };
 
-export default Error;
+export default About;

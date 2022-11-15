@@ -46,7 +46,7 @@ const Layout = () => {
           }
         }}
         className={styles.header}
-        title="人员管理系统"
+        title={loc.pathname === "/home/about" ? "关于" : "人员管理系统"}
         extra={[
           <span key="1" className={styles.user}>
             <Avatar src="https://joeschmoe.io/api/v1/random" />

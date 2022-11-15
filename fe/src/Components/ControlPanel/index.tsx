@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addItem, DataType } from "Redux/listSlice";
 import AddButton from "./AddButton";
-import AddModal from "./AddModal";
+import DetailModal from "./DetailModal";
 import BreadBar from "./BreadBar";
 import SearchBar from "./SearchBar";
 import styles from "./style.module.css";
@@ -25,7 +25,11 @@ const ControlPanel = () => {
       </div>
       <div className={styles.buttons}>
         <AddButton onClick={clickHandler} />
-        <AddModal open={modalOpen} setOpen={setModalOpen} add={addHandler} />
+        <DetailModal
+          open={modalOpen}
+          setOpen={setModalOpen}
+          onOk={addHandler}
+        />
         <SearchBar />
       </div>
     </div>

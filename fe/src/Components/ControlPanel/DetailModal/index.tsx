@@ -2,18 +2,18 @@ import { Input, Modal, Select } from "antd";
 import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import { faker } from "@faker-js/faker";
-import { DataType, selectList } from "Redux/listSlice";
-import { useAppSelector } from "Redux/store";
+import { DataType } from "Redux/listSlice";
 
 interface IProp {
   open: boolean;
   setOpen: (val: boolean) => void;
-  add: (data: DataType) => void;
+  onOk?: (data: DataType) => void;
+  data?: DataType;
 }
 
-const AddModal: React.FC<IProp> = ({ open, setOpen, add }) => {
-  const listLen = useAppSelector(selectList).length;
+const DetailModal: React.FC<IProp> = ({ open, setOpen, onOk, data }) => {
   const [avatar, setAvatar] = useState("");
+  const [key, setKey] = useState("");
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [faculty, setFaculty] = useState("计算机科学与技术");
@@ -23,18 +23,34 @@ const AddModal: React.FC<IProp> = ({ open, setOpen, add }) => {
   const [mail, setMail] = useState("");
 
   useEffect(() => {
-    setAvatar(faker.image.avatar());
-    setId(faker.datatype.uuid());
-    setName(faker.internet.userName());
-    setTel(faker.phone.number("1##########"));
-    setMail(faker.internet.email());
+    if (data === undefined) {
+      const id = faker.datatype.uuid();
+      setAvatar(faker.image.avatar());
+      setId(id);
+      setKey(id);
+      setName(faker.internet.userName());
+      setTel(faker.phone.number("1##########"));
+      setMail(faker.internet.email());
+    } else {
+      const { id, name, faculty, grade, gender, tel, mail, key, avatar } = data;
+      if (avatar !== undefined) setAvatar(avatar);
+      setId(id);
+      setName(name);
+      setFaculty(faculty);
+      setGender(gender);
+      setGrade(grade);
+      setTel(tel);
+      setMail(mail);
+      setKey(key);
+    }
   }, [open]);
 
   const handleOk = () => {
     setOpen(false);
+    if (onOk === undefined) return;
     const item: DataType = {
       avatar,
-      key: listLen,
+      key,
       id,
       name,
       faculty,
@@ -43,8 +59,8 @@ const AddModal: React.FC<IProp> = ({ open, setOpen, add }) => {
       tel,
       mail,
     };
-    console.log(item);
-    add(item);
+    console.log("submit", item);
+    onOk(item);
   };
 
   const handleCancel = () => {
@@ -144,4 +160,4 @@ const AddModal: React.FC<IProp> = ({ open, setOpen, add }) => {
   );
 };
 
-export default AddModal;
+export default DetailModal;

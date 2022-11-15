@@ -72,10 +72,10 @@ const StudentList: React.FC = () => {
         return (
           <DropMenu
             onEdit={() => {
-              console.log(index);
+              console.log("edit row:", index);
             }}
             onDel={() => {
-              console.log(index);
+              console.log("del row:", index);
               dispatch(delItem(index));
             }}
             data={record}

@@ -1,8 +1,10 @@
 import { DeleteOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Dropdown } from "antd";
+import DetailModal from "Components/ControlPanel/DetailModal";
 import React, { useState } from "react";
-import { DataType } from "Redux/listSlice";
+import { DataType, modifyItem } from "Redux/listSlice";
+import { useAppDispatch } from "Redux/store";
 import ConfirmModal from "../ConfirmModal";
 
 interface IProp {
@@ -11,19 +13,23 @@ interface IProp {
   data: DataType;
 }
 
-const DropMenu: React.FC<IProp> = ({ onEdit, onDel }) => {
-  const [modalOpen, setModalOpen] = useState(false);
+const DropMenu: React.FC<IProp> = ({ onEdit, onDel, data }) => {
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [modifyOpen, setModifyOpen] = useState(false);
+  const dispatch = useAppDispatch();
 
   const editHandler = () => {
-    console.log("edit");
+    setModifyOpen(true);
     onEdit();
   };
+  const delHandler = () => {
+    setConfirmOpen(true);
+  };
   const deleteItem = () => {
-    console.log("del");
     onDel();
   };
-  const delHandler = () => {
-    setModalOpen(true);
+  const modify = (data: DataType) => {
+    dispatch(modifyItem(data));
   };
 
   const items: MenuProps["items"] = [
@@ -42,11 +48,19 @@ const DropMenu: React.FC<IProp> = ({ onEdit, onDel }) => {
         编辑
       </Dropdown.Button>
       <ConfirmModal
-        open={modalOpen}
+        open={confirmOpen}
         setOpen={(val) => {
-          setModalOpen(val);
+          setConfirmOpen(val);
         }}
         setDelete={deleteItem}
+      />
+      <DetailModal
+        open={modifyOpen}
+        setOpen={(val) => {
+          setModifyOpen(val);
+        }}
+        data={data}
+        onOk={modify}
       />
     </>
   );

@@ -9,6 +9,8 @@ const checkLogin = require("./utils/checkLogin");
 const getPagination = require("./utils/getPagination");
 const getStuPage = require("./utils/getStuPage");
 const addItem = require("./utils/addItem");
+const delItem = require("./utils/delItem");
+const modifyItem = require("./utils/modifyItem");
 
 const app = new Koa();
 const router = new Router();
@@ -39,6 +41,8 @@ router.post("/login", koaBody(), preProcessLogin, checkUser, login);
 router.all("/logout", logout);
 router.get("/stu/list", checkLogin, getPagination, getStuPage);
 router.post("/stu/add", koaBody(), checkLogin, addItem);
+router.post("/stu/del", koaBody(), checkLogin, delItem);
+router.post("/stu/modify", koaBody(), checkLogin, modifyItem);
 
 app.use(router.routes()).use(router.allowedMethods());
 

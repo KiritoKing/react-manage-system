@@ -5,7 +5,7 @@ import { RootState } from "./store";
 
 export interface DataType {
   avatar?: string;
-  key: number;
+  key: string;
   id: string;
   name: string;
   faculty: string;
@@ -46,12 +46,46 @@ export const listSlice = createSlice({
         });
     },
     delItem: (state, action: PayloadAction<number>) => {
+      const id = state.value[action.payload].key;
       state.value.splice(action.payload, 1);
+
+      axios
+        .post("/api/stu/del", { id })
+        .then((res) => {
+          console.log(res.data);
+          if (res.data.code !== 200) {
+            alert("操作失败");
+            location.reload();
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    },
+    modifyItem: (state, action: PayloadAction<DataType>) => {
+      const key = action.payload.key;
+      const target = state.value.find((item) => item.key === key);
+
+      if (target !== undefined) {
+        state.value.splice(state.value.indexOf(target), 1, action.payload);
+        axios
+          .post("/api/stu/modify", { id: key, data: action.payload })
+          .then((res) => {
+            console.log(res.data);
+            if (res.data.code !== 200) {
+              alert("操作失败");
+              location.reload();
+            }
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
     },
   },
 });
 
-export const { setList, addItem, delItem } = listSlice.actions;
+export const { setList, addItem, delItem, modifyItem } = listSlice.actions;
 export const selectList = (state: RootState) => state.list.value;
 export const selectListReady = (state: RootState) => state.list.ready;
 

@@ -8,6 +8,7 @@ const logout = require("./utils/logout");
 const checkLogin = require("./utils/checkLogin");
 const getPagination = require("./utils/getPagination");
 const getStuPage = require("./utils/getStuPage");
+const addItem = require("./utils/addItem");
 
 const app = new Koa();
 const router = new Router();
@@ -37,6 +38,7 @@ const preProcessLogin = async (ctx, next) => {
 router.post("/login", koaBody(), preProcessLogin, checkUser, login);
 router.all("/logout", logout);
 router.get("/stu/list", checkLogin, getPagination, getStuPage);
+router.post("/stu/add", koaBody(), checkLogin, addItem);
 
 app.use(router.routes()).use(router.allowedMethods());
 

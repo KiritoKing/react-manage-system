@@ -1,5 +1,7 @@
 import { Modal } from "antd";
 import React from "react";
+import { WarningOutlined } from "@ant-design/icons";
+import styles from "./style.module.css";
 
 interface IProp {
   open: boolean;
@@ -18,9 +20,24 @@ const ConfirmModal: React.FC<IProp> = ({ open, setOpen, setDelete }) => {
   };
 
   return (
-    <Modal title="确认删除" open={open} onOk={handleOk} onCancel={handleCancel}>
-      <p>你确定要删除吗？</p>
-      <p>这个操作将永久删除这条记录，不可恢复。</p>
+    <Modal
+      title="确认删除"
+      okText="确定"
+      okType="danger"
+      cancelText="取消"
+      open={open}
+      onOk={handleOk}
+      onCancel={handleCancel}
+    >
+      <div className={styles.container}>
+        <div className={styles.icon}>
+          <WarningOutlined />
+        </div>
+        <div className={styles.text}>
+          <p>你确定要删除吗？</p>
+          <p>这个操作将永久删除这条记录，不可恢复。</p>
+        </div>
+      </div>
     </Modal>
   );
 };

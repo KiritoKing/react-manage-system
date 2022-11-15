@@ -23,7 +23,4 @@ async function getUsers() {
     }
   }
 }
-
-getUsers();
-
 module.exports = getUsers;

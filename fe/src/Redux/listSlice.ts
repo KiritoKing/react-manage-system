@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import axios from "axios";
 import { RootState } from "./store";
 
 export interface DataType {
+  avatar?: string;
   id: string;
   name: string;
   faculty: string;
@@ -30,10 +32,22 @@ export const listSlice = createSlice({
       state.value = action.payload;
       state.ready = true;
     },
+    addItem: (state, action: PayloadAction<DataType>) => {
+      state.value.push(action.payload);
+      axios
+        .post("/api/stu/add", action.payload)
+        .then((res) => {
+          const response = res.data;
+          console.log(response);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    },
   },
 });
 
-export const { setList } = listSlice.actions;
+export const { setList, addItem } = listSlice.actions;
 export const selectList = (state: RootState) => state.list.value;
 export const selectListReady = (state: RootState) => state.list.ready;
 

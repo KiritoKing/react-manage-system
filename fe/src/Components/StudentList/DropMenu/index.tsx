@@ -1,4 +1,4 @@
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
+import { DeleteOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Dropdown } from "antd";
 import React, { useState } from "react";

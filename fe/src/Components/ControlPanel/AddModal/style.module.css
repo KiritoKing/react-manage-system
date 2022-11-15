@@ -1,0 +1,30 @@
+.container {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.imgWrapper {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 2rem;
+}
+
+.img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.input {
+  width: 80%;
+  margin-top: 1rem;
+}
+
+.select {
+  width: 100%;
+}

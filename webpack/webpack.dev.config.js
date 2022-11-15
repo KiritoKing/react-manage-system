@@ -15,6 +15,9 @@ module.exports = merge(common, {
     compress: true,
     allowedHosts: "127.0.0.1",
     historyApiFallback: true,
+    proxy: {
+      "/api": "http://localhost:9001",
+    },
   },
   module: {
     rules: [

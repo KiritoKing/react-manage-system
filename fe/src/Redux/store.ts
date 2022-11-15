@@ -1,10 +1,12 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import loginReducer from "./loginSlice";
+import listReducer from "./listSlice";
 
 export const store = configureStore({
   reducer: {
     login: loginReducer,
+    list: listReducer,
   },
 });
 

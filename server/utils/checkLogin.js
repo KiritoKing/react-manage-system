@@ -3,8 +3,13 @@ async function checkLogin(ctx, next) {
   if (user !== undefined && user !== null) {
     ctx.state.login = true;
     console.log("User authorized");
+    await next();
+  } else {
+    ctx.body = {
+      code: 403,
+      message: "Not Logged In",
+    };
   }
-  await next();
 }
 
 module.exports = checkLogin;

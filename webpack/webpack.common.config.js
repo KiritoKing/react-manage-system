@@ -31,9 +31,11 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: "人员管理系统",
       template: path.resolve(rootPath, "static/index.html"),
       filename: "index.html",
       favicon: path.resolve(rootPath, "static/favicon.ico"),
+      inject: "body",
     }),
   ],
 };

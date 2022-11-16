@@ -9,7 +9,7 @@ module.exports = merge(common, {
   mode: "development",
   devServer: {
     static: {
-      directory: path.join(fe, "build"),
+      directory: path.join(rootPath, "static"),
     },
     port: 9000,
     compress: true,

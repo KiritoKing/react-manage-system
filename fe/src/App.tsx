@@ -7,11 +7,13 @@ import Home from "./Pages/Home";
 import Layout from "./Components/Layout";
 import Detail from "Pages/Detail";
 import About from "Pages/About";
+import Error from "Pages/Error";
 
 const router = createHashRouter([
   {
     path: "/",
     element: <Login />,
+    errorElement: <Error />,
   },
   {
     path: "/home",

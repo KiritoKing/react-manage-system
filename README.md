@@ -8,6 +8,8 @@
 
 后端采用Koa.js+Node.js环境实现。
 
+更多Commit记录请访问：[KiritoKing/student-management: 基于 React+Koa.js 的全栈人员管理应用 (github.com)](https://github.com/KiritoKing/student-management)
+
 <!-- PROJECT SHIELDS -->
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -26,15 +28,10 @@
 - [上手指南](#上手指南)
   - [开发前的配置要求](#开发前的配置要求)
   - [安装步骤](#安装步骤)
-- [文件目录说明](#文件目录说明)
-- [开发的架构](#开发的架构)
 - [部署](#部署)
 - [使用到的框架](#使用到的框架)
-- [贡献者](#贡献者)
-  - [如何参与开源项目](#如何参与开源项目)
 - [版本控制](#版本控制)
 - [作者](#作者)
-- [鸣谢](#鸣谢)
 
 ### 上手指南
 

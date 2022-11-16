@@ -1,35 +1,24 @@
 [
   {
-    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1037.jpg",
-    "key": "6c8528c2-1a76-48d0-b476-4194060afc22",
-    "id": "U2019XXXXX",
-    "name": "董晓雪",
-    "faculty": "经济",
-    "grade": "2019",
-    "gender": "女",
-    "tel": "17132670734",
-    "mail": "Delilah_McCullough@yahoo.com"
-  },
-  {
-    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/503.jpg",
-    "key": "2e1520a9-aa7f-47bb-a6da-9ff01c1b7eff",
-    "id": "2e1520a9-aa7f-47bb-a6da-9ff01c1b7eff",
-    "name": "Libbie_Price70",
-    "faculty": "经济",
-    "grade": "2019",
-    "gender": "女",
-    "tel": "13915779682",
-    "mail": "Mackenzie_Quigley70@yahoo.com"
-  },
-  {
-    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1191.jpg",
-    "key": "3772282e-fad2-49a4-844f-4e14337caccc",
-    "id": "3772282e-fad2-49a4-844f-4e14337caccc",
-    "name": "Reagan_Cole56",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/278.jpg",
+    "key": "1a06f999-2e0b-4877-818f-a75b9c9e028d",
+    "id": "1a06f999-2e0b-4877-818f-a75b9c9e028d",
+    "name": "Molly_Runolfsdottir33",
     "faculty": "计算机科学与技术",
     "grade": "2020",
     "gender": "男",
-    "tel": "16244359977",
-    "mail": "Rhoda.Littel44@hotmail.com"
+    "tel": "16898892422",
+    "mail": "Malcolm_Jacobson@gmail.com"
+  },
+  {
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1167.jpg",
+    "key": "50e2ae2c-a3db-4224-abcf-bdd6799e39c9",
+    "id": "50e2ae2c-a3db-4224-abcf-bdd6799e39c9",
+    "name": "Madge.Stokes90",
+    "faculty": "计算机科学与技术",
+    "grade": "2020",
+    "gender": "男",
+    "tel": "10646619542",
+    "mail": "Chet_Jones65@gmail.com"
   }
 ]

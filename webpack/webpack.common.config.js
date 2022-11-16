@@ -24,7 +24,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif|ico)$/i,
         type: "asset",
       },
     ],
@@ -34,7 +34,7 @@ module.exports = {
       title: "人员管理系统",
       template: path.resolve(rootPath, "static/index.html"),
       filename: "index.html",
-      favicon: path.resolve(rootPath, "static/favicon.ico"),
+      favicon: path.resolve(rootPath, "static/icon.png"),
       inject: "body",
     }),
   ],

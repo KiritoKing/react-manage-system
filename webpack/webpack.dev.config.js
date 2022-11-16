@@ -1,7 +1,6 @@
 const path = require("path");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common.config.js");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const rootPath = process.cwd();
 const fe = path.resolve(rootPath, "fe");

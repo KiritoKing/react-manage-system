@@ -112,6 +112,43 @@ ChlorineC@HUST, 2022
 
 
 
+---
+
+
+
+### 开发札记
+
+##### 前端部分
+
+- 项目可视化部分分为Page和Component两个部分组成
+  - Page主要用于构成路由页面，管理高层状态
+  - Component将页面用到的组件全部解耦合
+    - 利用CSS Module实现了选择器类名的简化
+    - 使部分插件能在不同页面之间复用，如`Modal`、`BreadBar`、`Layout`等
+- 客户端路由使用 `React-Router` 实现，使用 `HashRouter` 作为硬实现，避免服务端的额外适配
+  - 使用`Chlidren`和`Outlet`特性实现`Layout`
+- 逻辑层上使用`Redux`管理全局状态树，并在部分高复用功能下使用自定义Hook
+  - 创建了三个切片分别管理**学生列表信息、登陆状态信息和历史记录信息**
+  - 使用两个自定义Hook
+    - `useLogin` 用于获取并保持用户登陆状态（使之不会随刷新产生的状态消失而重新登陆）
+    - `useHistory` 用于解析当前Path刷新历史信息树Redux，供面包屑部件使用
+
+##### 后端部分
+
+- 因为是初次接触后端开发，所以没有太多技术细节
+- 将不同的功能拆分成单个文件，放在`/server/utils/` 目录中，使中间件表达更加简洁
+- 将数据存储在json中以实现数据持久化
+- 关于端口对接
+  - 在Dev中使用代理实现，即对Dev-Server实现9000端口的/api到9001端口的转发
+  - 在Prod中使用koa-static实现，直接在9001端口下渲染/fe/build/，即不用跨域
+
+##### 其他部分
+
+- 脚手架完全自己通过Webpack搭建~~（虽然考虑过next但是它的优化项不太熟反而造成了麻烦）~~，实现了**前端和后端在一个项目中构建**
+- 脚手架中完整具有ESLint，Prettier和CSS Module支持
+
+
+
 <!-- links -->
 
 [your-project-path]: KiritoKing/student-management

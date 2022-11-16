@@ -1,6 +1,9 @@
 const Koa = require("koa");
 const Router = require("koa-router");
 const { koaBody } = require("koa-body");
+const Static = require("koa-static");
+const path = require("path");
+
 const checkUser = require("./utils/checkUser");
 const login = require("./utils/login");
 const getUsers = require("./utils/getUsers");
@@ -43,6 +46,9 @@ router.get("/stu/list", checkLogin, getPagination, getStuPage);
 router.post("/stu/add", koaBody(), checkLogin, addItem);
 router.post("/stu/del", koaBody(), checkLogin, delItem);
 router.post("/stu/modify", koaBody(), checkLogin, modifyItem);
+
+const root = process.cwd();
+app.use(Static(path.join(root, "fe/build")));
 
 app.use(router.routes()).use(router.allowedMethods());
 

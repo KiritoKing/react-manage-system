@@ -87,6 +87,8 @@ final
 2. 运行后端服务器 `npm run server`
 3. 访问 http://localhost:9001
 
+*注：管理员用户名admin，密码123456*
+
 
 
 ### 使用到的框架

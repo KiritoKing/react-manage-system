@@ -19,7 +19,7 @@
     "url": "git+https://github.com/KiritoKing/HUST-Kingsoft-2022.git"
   },
   "scripts": {
-    "dev": "webpack server --open --config ./webpack/webpack.dev.config.js",
+    "start": "webpack server --open --config ./webpack/webpack.dev.config.js",
     "build": "webpack --config ./webpack/webpack.prod.config.js",
     "test": "node ./__tests__/front-end.test.js"
   },

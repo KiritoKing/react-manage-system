@@ -7,6 +7,7 @@
   "author": "KiritoKing",
   "license": "ISC",
   "devDependencies": {
+    "@yarnpkg/pnpify": "^4.0.0-rc.44",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
@@ -20,5 +21,14 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "dev": "npx lerna run start --parallel",
+    "build": "npx lerna run build",
+    "test": "npx lerna run typescript",
+    "clean": "npx lerna run clean --parallel",
+    "prepublish": "npx lerna run prepublish --parallel",
+    "prepare": "npx lerna run prepare --parallel",
+    "postinstall": "npx lerna run postinstall --parallel"
+  }
 }

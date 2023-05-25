@@ -20,3 +20,4 @@ tempCodeRunnerFile*
 server/data/students.json
 
 .yarn
+.pnp.*

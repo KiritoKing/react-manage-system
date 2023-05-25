@@ -1,0 +1,41 @@
+{
+  "name": "back-end",
+  "version": "0.0.0",
+  "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
+  "keywords": [],
+  "author": "KiritoKing <kiritoclzh@gmail.com>",
+  "license": "ISC",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KiritoKing/HUST-Kingsoft-2022.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/back-end.test.js",
+    "start": "node ./app.js"
+  },
+  "bugs": {
+    "url": "https://github.com/KiritoKing/HUST-Kingsoft-2022/issues"
+  },
+  "homepage": "https://github.com/KiritoKing/HUST-Kingsoft-2022#readme",
+  "dependencies": {
+    "koa": "^2.13.4",
+    "koa-body": "^6.0.1",
+    "koa-cookie": "^1.0.0",
+    "koa-router": "^12.0.0",
+    "koa-static": "^5.0.0",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.1",
+    "sort-by": "^1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

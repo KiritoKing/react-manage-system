@@ -2,19 +2,18 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const rootPath = process.cwd();
-const fe = path.resolve(rootPath, "fe");
-const entry = path.resolve(fe, "src/index.tsx");
+const entry = path.resolve(rootPath, "src/index.tsx");
 
 module.exports = {
   entry,
   output: {
     filename: "[name].[chunkhash:8].js",
-    path: path.resolve(fe, "build"),
+    path: path.resolve(rootPath, "build"),
     publicPath: "/",
   },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js"],
-    modules: [path.resolve(fe, "src"), "node_modules"],
+    modules: [path.resolve(rootPath, "src"), "node_modules"],
   },
   module: {
     rules: [

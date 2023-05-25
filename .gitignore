@@ -18,3 +18,5 @@ yarn-debug.log*
 yarn-error.log*
 tempCodeRunnerFile*
 server/data/students.json
+
+.yarn

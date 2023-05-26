@@ -30,5 +30,10 @@
     "prepublish": "npx lerna run prepublish --parallel",
     "prepare": "npx lerna run prepare --parallel",
     "postinstall": "npx lerna run postinstall --parallel"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }

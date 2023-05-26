@@ -19,8 +19,10 @@
     "eslint-plugin-react": "^7.31.10",
     "husky": "^8.0.0",
     "lerna": "^6.6.2",
+    "lint-staged": "^13.2.2",
     "npm-run-all": "^4.1.5",
     "pinst": "^3.0.0",
+    "prettier": "^2.8.8",
     "typescript": "^4.8.4"
   },
   "workspaces": [
@@ -29,7 +31,7 @@
   "scripts": {
     "dev": "npx lerna run start --parallel",
     "build": "npx lerna run build",
-    "test": "npx lerna run typescript",
+    "test": "npx lerna run test",
     "clean": "npx lerna run clean --parallel",
     "prepublish": "npx lerna run prepublish --parallel",
     "prepare": "npx lerna run prepare --parallel",
@@ -41,5 +43,8 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "lint-staged": {
+    "*": "yarn eslint --fix"
   }
 }

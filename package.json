@@ -9,6 +9,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.7",
     "@yarnpkg/pnpify": "^4.0.0-rc.44",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
@@ -45,6 +46,9 @@
     }
   },
   "lint-staged": {
-    "*": "yarn eslint --fix"
+    "*.js": "eslint --fix",
+    "*.ts": "eslint --fix",
+    "*.tsx": "eslint --fix",
+    "*.json": "prettier --write"
   }
 }

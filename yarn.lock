@@ -3241,7 +3241,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.41.0":
+"@typescript-eslint/eslint-plugin@npm:^5.41.0, @typescript-eslint/eslint-plugin@npm:^5.59.7":
   version: 5.59.7
   resolution: "@typescript-eslint/eslint-plugin@npm:5.59.7"
   dependencies:
@@ -7665,6 +7665,7 @@ __metadata:
   dependencies:
     "@commitlint/cli": ^17.6.3
     "@commitlint/config-conventional": ^17.6.3
+    "@typescript-eslint/eslint-plugin": ^5.59.7
     "@yarnpkg/pnpify": ^4.0.0-rc.44
     eslint: ^8.26.0
     eslint-config-prettier: ^8.5.0

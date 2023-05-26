@@ -1,21 +1,33 @@
 {
-  "include": ["fe/src"],
-  "exclude": ["node_modules"],
+  "include": [
+    "packages"
+  ],
+  "exclude": [
+    "node_modules",
+    ".yarn"
+  ],
   "compilerOptions": {
-    "baseUrl": "fe/src",
-    "target": "ES5",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    "jsx": "react",                                /* Specify what JSX code is generated. */
-    "module": "ES6",                                /* Specify what module code is generated. */
-    "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
-    "allowJs": true,                                  /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
-    "noEmit": true,                                   /* Disable emitting files from a compilation. */
-    "allowSyntheticDefaultImports": true,             /* Allow 'import x from y' when a module doesn't have a default export. */
-    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
-    "strict": true,                                      /* Enable all strict type-checking options. */
-    "noImplicitAny": true,                            /* Enable error reporting for expressions and declarations with an implied 'any' type. */
-    "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
-    "lib": ["ESNext", "DOM"],
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "baseUrl": "packages/front-end",
+    "target": "ES5", /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "jsx": "react", /* Specify what JSX code is generated. */
+    "module": "ES6", /* Specify what module code is generated. */
+    "moduleResolution": "node", /* Specify how TypeScript looks up a file from a given module specifier. */
+    "allowJs": true, /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
+    "noEmit": true, /* Disable emitting files from a compilation. */
+    "allowSyntheticDefaultImports": true, /* Allow 'import x from y' when a module doesn't have a default export. */
+    "esModuleInterop": true, /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+    "forceConsistentCasingInFileNames": true, /* Ensure that casing is correct in imports. */
+    "strict": true, /* Enable all strict type-checking options. */
+    "noImplicitAny": true, /* Enable error reporting for expressions and declarations with an implied 'any' type. */
+    "skipLibCheck": true, /* Skip type checking all .d.ts files. */
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
   }
 }

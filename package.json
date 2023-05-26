@@ -7,6 +7,8 @@
   "author": "KiritoKing",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
     "@yarnpkg/pnpify": "^4.0.0-rc.44",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
@@ -15,8 +17,10 @@
     "eslint-plugin-n": "^15.3.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.10",
+    "husky": "^8.0.0",
     "lerna": "^6.6.2",
     "npm-run-all": "^4.1.5",
+    "pinst": "^3.0.0",
     "typescript": "^4.8.4"
   },
   "workspaces": [
@@ -29,7 +33,9 @@
     "clean": "npx lerna run clean --parallel",
     "prepublish": "npx lerna run prepublish --parallel",
     "prepare": "npx lerna run prepare --parallel",
-    "postinstall": "npx lerna run postinstall --parallel"
+    "postinstall": "husky install",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
   },
   "config": {
     "commitizen": {
